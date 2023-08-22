@@ -11,10 +11,12 @@
 
 <body>
     <header>
-        <div class="flex justify-center items-center bg-[#F9F6E2]">
-            <div class="mt-14 mb-14">
+        <div class="lg:flex justify-center items-center bg-[#F9F6E2]">
+            <div class="lg:mt-14 pt-14 mb-14">
                 <h3 class="text-center text-3xl font-medium">---SALE FEVER---</h3>
-                <h1 class="text-6xl leading-normal font-bold text-center w-[604px] mb-10 mt-10">Purchase TK 200 or
+                <h1 class="lg:text-6xl text-3xl leading-normal font-bold text-center lg:w-[604px] mb-10 mt-10">Purchase
+                    TK
+                    200 or
                     above & get
                     <span class="text-[#E527B2]">20% off</span>
                 </h1>
@@ -23,7 +25,7 @@
                     <button class="btn btn-secondary ml-4 ">SELL200</button>
                 </div>
             </div>
-            <div class=" w-2/6 mt-14 mb-14 ml-14 pl-20">
+            <div class=" lg:w-2/6 w-6/6 mt-14 mb-14 pl-16 mr-9 lg:ml-14 lg:pl-20">
                 <img src="images/Summer 1.png" alt="summer images">
             </div>
         </div>
@@ -33,10 +35,10 @@
     <!-- Kitchenware section started -->
     <main>
         <section class="mt-32 mb-20">
-            <h1 class="text-5xl px-10 ml-20 mb-10 font-semibold">Kitchenware</h1>
-            <div class="flex px-10 ml-20">
+            <h1 class="text-5xl px-10 lg:ml-20 ml-5 mb-10 font-semibold">Kitchenware</h1>
+            <div class="lg:flex lg:px-10 lg:ml-20 ml-16">
                 <div id="card-1" onclick="newElement(this)"
-                    class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                    class="card mb-7 lg:mb-0 cursor-pointer lg:mr-10 w-72 bg-base-100 shadow-xl">
                     <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class="" src="/images/prod1.png"
                             alt="" />
                     </figure>
@@ -52,8 +54,8 @@
                         <p class="text-center pt-3" id="card-1-paragraph">39.00 TK</p>
                     </div>
                 </div>
-                <div onclick="newElement(this)" class="card mr-10 cursor-pointer w-72 bg-base-100 shadow-xl"
-                    id="card-2">
+                <div onclick="newElement(this)"
+                    class="card mb-7 lg:mb-0 mr-10 cursor-pointer w-72 bg-base-100 shadow-xl" id="card-2">
                     <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class="" src="/images/prod2.png"
                             alt="" />
                     </figure>
@@ -66,10 +68,11 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         </div>
                         <h2 class="text-center">K. Accessories</h2>
-                        <p class="text-center pt-3">39.00 TK</p>
+                        <p class="text-center pt-3">25.00 TK</p>
                     </div>
                 </div>
-                <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                <div onclick="newElement(this)"
+                    class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                     <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class="" src="/images/prod3.png"
                             alt="" />
                     </figure>
@@ -85,22 +88,24 @@
                         <p class="text-center pt-3">49.00 TK</p>
                     </div>
                 </div>
-
-                <div class="drop-shadow-lg">
+                <!-- Another side var -->
+                <div class="drop-shadow-lg rounded-lg mr-10">
                     <div class="bg-[#FFF] h-32">
                         <h2 class="ml-6 mt-7 mb-4">Have coupon?</h2>
-                        <input type="text" placeholder="Coupon code" class="px-3 py-3 rounded-lg bg-gray-100 ml-3">
-                        <button class="btn btn-secondary text-center mr-3" disabled>Apply</button>
+                        <input type="text" id="remove" placeholder="Coupon code"
+                            class="px-3 py-3 rounded-lg bg-gray-100 ml-3">
+                        <button id="purchase-button" class="btn btn-secondary text-center mr-3" disabled>Apply</button>
                     </div>
                     <div class="bg-[#FFF] rounded-lg mt-10 list-decimal px-5 py-5" id="selected-items">
 
                     </div>
-                    <div class="bg-[#FFF] mt-10 ">
+                    <div class="bg-[#FFF] mt-10 rounded-lg">
                         <hr>
                         <div class="px-7 py-4">
                             <h2>Total price: <span class="text-2xl font-medium text-[rgba(17, 17, 17, 0.50)]"
                                     id="total-price">0.00 </span>TK</h2>
-                            <h2> Discount : <span class="text-2xl font-medium text-[rgba(17, 17, 17, 0.50)]">0.00
+                            <h2> Discount : <span id="discount-amount"
+                                    class="text-2xl font-medium text-[rgba(17, 17, 17, 0.50)]">0.00
                                 </span>TK
                             </h2>
                             <h2> Total : <span class="text-2xl font-medium text-[rgba(17, 17, 17, 0.50)]"
@@ -109,16 +114,18 @@
                             </h2>
                         </div>
                         <hr>
-                        <button class="btn btn-secondary mt-7 px-12 ml-9 mb-4" disabled>Make Purchase</button>
+                        <button id="purchase-buttons" class="btn btn-secondary mt-7 px-12 ml-9 mb-4" disabled>Make
+                            Purchase</button>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Sportswear section started  -->
         <section>
-            <h1 class="text-5xl px-10 ml-20 mb-10 font-semibold">Sportswear</h1>
-            <div class="flex  px-10 ml-20 mb-20">
-                <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+            <h1 class="text-5xl px-10 ml-10 lg:ml-20 mb-10 font-semibold">Sportswear</h1>
+            <div class="lg:flex  px-10 lg:ml-20 ml-10 mb-20">
+                <div onclick="newElement(this)"
+                    class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                     <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class="" src="/images/prod4.png"
                             alt="" />
                     </figure>
@@ -134,7 +141,8 @@
                         <p class="text-center pt-3">49.00 TK</p>
                     </div>
                 </div>
-                <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                <div onclick="newElement(this)"
+                    class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                     <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class="" src="/images/prod5.png"
                             alt="" />
                     </figure>
@@ -150,7 +158,8 @@
                         <p class="text-center pt-3">69.00 TK</p>
                     </div>
                 </div>
-                <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                <div onclick="newElement(this)"
+                    class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                     <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class="" src="/images/prod6.png"
                             alt="" />
                     </figure>
@@ -169,10 +178,11 @@
             </div>
         </section>
         <section>
-            <h1 class="text-5xl px-10 ml-20 mb-10 font-semibold">Furniture</h1>
+            <h1 class="text-5xl px-10 lg:ml-20 ml-9 mb-10 font-semibold">Furniture</h1>
             <div class="">
-                <div class="flex  px-10 ml-20 mb-20">
-                    <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                <div class="lg:flex px-10 ml-9 lg:ml-20 mb-20">
+                    <div onclick="newElement(this)"
+                        class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                         <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class=""
                                 src="/images/prod7.png" alt="" />
                         </figure>
@@ -188,7 +198,8 @@
                             <p class="text-center pt-3">185.00 TK</p>
                         </div>
                     </div>
-                    <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                    <div onclick="newElement(this)"
+                        class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                         <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class=""
                                 src="/images/prod8.png" alt="" />
                         </figure>
@@ -204,7 +215,8 @@
                             <p class="text-center pt-3">299.00 TK</p>
                         </div>
                     </div>
-                    <div onclick="newElement(this)" class="card cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
+                    <div onclick="newElement(this)"
+                        class="card mb-7 lg:mb-0 cursor-pointer mr-10 w-72 bg-base-100 shadow-xl">
                         <figure class="bg-gray-200 mt-5 mx-5 py-10 px-10 rounded-lg"><img class=""
                                 src="/images/prod9.png" alt="" />
                         </figure>
@@ -225,6 +237,9 @@
         </section>
     </main>
     <script src="js/event.js"></script>
+    <script src="js/extra.js"></script>
+    <script src="js/mini.js"></script>
+    <script src="js/last.js"></script>
 </body>
 
 </html>
