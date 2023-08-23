@@ -1,12 +1,23 @@
 let totalPrices = 0;
 
 function newElement(target) {
-    const createElement = document.getElementById('selected-items')
-    const parent = target.childNodes[3].childNodes[3].innerText;
+    const createElement = document.getElementById('selected-items');
+    const parent = target.querySelector('h2').innerText; // Using querySelector for better readability
     const li = document.createElement('li');
     li.innerText = parent;
-    createElement.appendChild(li)
-    const price = target.childNodes[3].childNodes[5].innerText.split(' ')[0];
-    totalPrices = parseInt(totalPrices) + parseInt(price);
+    createElement.appendChild(li);
+
+    const priceText = target.querySelector('.pt-3').innerText;
+    const price = parseFloat(priceText.split(' ')[0]); // Using parseFloat for better precision
+    totalPrices += price;
     document.getElementById('total-price').innerText = totalPrices;
+
+    console.log('Total Price:', totalPrices); // Debugging
+
+    const y = document.getElementById('purchase-button');
+    const z = document.getElementById('purchase-buttons');
+    if (totalPrices >= 200) {
+        y.removeAttribute("disabled");
+        z.removeAttribute('disabled');
+    }
 }
